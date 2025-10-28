@@ -22,4 +22,9 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
       - name: Run unit & integration tests (pytest)
-        run: PYTHONPATH=$PYTHONPATH:. pytest -q
+        run: |
+          pwd
+          ls -la
+          echo "Current PYTHONPATH: $PYTHONPATH"
+          python -c "import sys; print('Python path:', sys.path)"
+          PYTHONPATH=$PWD pytest -q
