@@ -1,6 +1,12 @@
 # tests/test_arithmetic_unit.py
-from arithmetic import add
-import pytest
+import os
+import sys
+
+# Add the parent directory to Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from arithmetic import add  # noqa: E402
+import pytest  # noqa: E402
 
 
 def test_add_integers():
